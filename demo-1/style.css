@@ -1,0 +1,159 @@
+/* ===== Base ===== */
+:root {
+    --page-bg: #ffffff;
+    --text: #000000;
+    --muted: #000000; /* Figma uses black for both lines */
+    --stroke: #ececec;
+
+    /* Figma: tag-section padding 60px 240px on a 1920px-wide frame,
+       inner content fixed at 1440px. */
+    --section-pad-y: 60px;
+    --section-pad-x: 240px;
+    --inner-width: 1440px;
+
+    --gap-between-tags: 281px;
+    --tag-gap: 16px;
+
+    --icon-size: 74px;
+    --icon-pad: 0px;
+
+    --title-size: 18px;
+    --title-weight: 500;
+
+    --subtitle-size: 14px;
+    --subtitle-weight: 400;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text);
+    font-family:
+        "DM Sans",
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        "Liberation Sans",
+        sans-serif;
+}
+
+/* ===== tag-section (Frame: 1920 wide, centered) ===== */
+.tag-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--section-pad-y) var(--section-pad-x);
+    background: var(--page-bg);
+}
+
+.tag-section__inner {
+    width: var(--inner-width);
+    height: 74px; /* Figma Frame 6 height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap-between-tags);
+}
+
+/* ===== tag item (Frame 3/4/5) ===== */
+.tag {
+    display: flex;
+    align-items: center;
+    gap: var(--tag-gap);
+    margin: 0;
+    min-width: 0;
+}
+
+/* Icon container matches Figma: 74x74 with 2px border and full rounding */
+.tag__icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border: 2px solid var(--stroke);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--icon-pad);
+    flex: 0 0 auto;
+}
+
+.tag__icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Text stack */
+.tag__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Figma Frame 2 gap */
+    min-width: 0;
+}
+
+.tag__title {
+    margin: 0;
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
+    line-height: 1; /* Figma lineHeight: 1em */
+    color: var(--text);
+}
+
+.tag__subtitle {
+    margin: 0;
+    font-size: var(--subtitle-size);
+    font-weight: var(--subtitle-weight);
+    line-height: 1; /* Figma lineHeight: 1em */
+    color: var(--muted);
+}
+
+/* ===== Responsive adjustments (not specified in Figma; keep layout intact) ===== */
+@media (max-width: 1600px) {
+    :root {
+        --section-pad-x: 64px;
+        --inner-width: min(1440px, calc(100vw - 128px));
+        --gap-between-tags: 80px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .tag-section__inner {
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 32px;
+    }
+
+    .tag {
+        flex: 1 1 320px;
+    }
+}
+
+@media (max-width: 520px) {
+    :root {
+        --section-pad-x: 20px;
+    }
+
+    .tag {
+        flex: 1 1 100%;
+    }
+
+    .tag__content {
+        gap: 10px;
+    }
+}
