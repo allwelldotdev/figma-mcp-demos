@@ -1,0 +1,371 @@
+:root {
+  --bg: #f9f6ef;
+  --text: #000;
+  --card: #fff;
+
+  --page-max: 1920px;
+  --gutter: 144px;
+
+  --title-size: 32px;
+  --title-weight: 500;
+
+  --card-w: 338px;
+  --card-h: 486px;
+  --img-h: 338px;
+  --info-h: 148px;
+
+  --radius-card: 16px;
+  --radius-pill: 3px;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+/* =========================
+   Section
+   ========================= */
+
+.product-section {
+  position: relative;
+  width: 100%;
+  min-height: 748px; /* matches Figma frame height */
+  background: var(--bg);
+}
+
+.product-section__inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 80px var(--gutter);
+}
+
+.product-section__title {
+  margin: 0;
+  text-align: center;
+  font-size: var(--title-size);
+  font-weight: var(--title-weight);
+  line-height: 1;
+  color: var(--text);
+}
+
+/* =========================
+   Carousel layout (Figma is basically a row of 4 cards)
+   ========================= */
+
+.product-carousel {
+  position: relative;
+  margin-top: 70px; /* title y=80 then cards y=182 -> ~102px gap; adjusted for padding */
+}
+
+/* Decorative nav art from Figma (centered around mid-line) */
+.product-carousel__nav-art {
+  position: absolute;
+  left: 50%;
+  top: 220px; /* around mid of cards (y ≈ 402 in Figma) */
+  transform: translateX(-50%);
+  width: 1632px;
+  height: 46px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 1;
+}
+
+/* Functional controls (hidden on desktop to preserve exact Figma look) */
+.product-carousel__controls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.icon-button {
+  pointer-events: auto;
+  position: absolute;
+  top: 220px;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease;
+}
+
+.icon-button:hover {
+  transform: translateY(-1px);
+  background: #fff;
+}
+
+.icon-button:active {
+  transform: translateY(0);
+}
+
+.icon-button:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+.icon-button span {
+  font-size: 28px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.icon-button[data-carousel-prev] {
+  left: 0;
+  transform: translate(-50%, 0);
+}
+
+.icon-button[data-carousel-next] {
+  right: 0;
+  transform: translate(50%, 0);
+}
+
+.product-carousel__viewport {
+  outline: none;
+}
+
+.product-carousel__viewport:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.65);
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+
+.product-carousel__track {
+  display: flex;
+  gap: 29px; /* (338*4 + gap*3) = 1632 from Figma; gap ≈ 29.33 */
+  align-items: flex-start;
+
+  /* Desktop: show all 4 cards without scrolling, as in Figma */
+  overflow: visible;
+  padding: 0;
+}
+
+/* =========================
+   Product card
+   ========================= */
+
+.product-card {
+  width: var(--card-w);
+  height: var(--card-h);
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card);
+  background: transparent;
+  overflow: hidden;
+}
+
+.product-card__image-wrap {
+  width: var(--card-w);
+  height: var(--img-h);
+  border-top-left-radius: var(--radius-card);
+  border-top-right-radius: var(--radius-card);
+  overflow: hidden;
+  background: #eee;
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__info {
+  width: var(--card-w);
+  height: var(--info-h);
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 16px;
+}
+
+.product-card__name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  text-transform: capitalize; /* Figma "TITLE" */
+  color: var(--text);
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card__price {
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-transform: capitalize; /* Figma "TITLE" */
+  color: var(--text);
+}
+
+.product-card__cta {
+  margin-top: 24px;
+  height: 42px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: #000;
+  border: 0.3px solid #fff; /* matches Figma stroke */
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: none;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.product-card__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.product-card__cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.product-card__cta:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+}
+
+/* =========================
+   Toast
+   ========================= */
+
+.toast[hidden] {
+  display: none;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: rgba(17, 17, 17, 0.92);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  max-width: min(520px, calc(100vw - 32px));
+}
+
+.toast__text {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* =========================
+   Responsive behavior
+   - Below ~1700px wide, allow horizontal scrolling / snap
+   - Show functional prev/next buttons; hide decorative nav art
+   ========================= */
+
+@media (max-width: 1760px) {
+  :root {
+    --gutter: 24px;
+  }
+
+  .product-section__inner {
+    padding: 64px var(--gutter);
+  }
+
+  .product-carousel__nav-art {
+    display: none;
+  }
+
+  .product-carousel__controls {
+    display: flex;
+  }
+
+  .product-carousel__track {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    padding: 0 8px 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product-carousel__track::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .product-carousel__track::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.16);
+    border-radius: 999px;
+  }
+
+  .product-card {
+    scroll-snap-align: start;
+  }
+
+  .icon-button[data-carousel-prev] {
+    left: 12px;
+    transform: none;
+  }
+
+  .icon-button[data-carousel-next] {
+    right: 12px;
+    transform: none;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --title-size: 24px;
+  }
+
+  .product-card {
+    width: 300px;
+    height: 460px;
+  }
+
+  .product-card__image-wrap {
+    width: 300px;
+    height: 300px;
+  }
+
+  .product-card__info {
+    width: 300px;
+    height: 160px;
+  }
+
+  .icon-button {
+    top: 190px;
+  }
+}

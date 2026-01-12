@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LSS Product Section</title>
+
+        <!-- Fonts (Figma uses DM Sans) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="./style.css" />
+        <script src="./script.js" defer></script>
+    </head>
+
+    <body>
+        <main>
+            <section class="product-section" aria-label="Products">
+                <div class="product-section__inner">
+                    <h2 class="product-section__title">
+                        Our zero-waste, eco-friendly, refillable products
+                    </h2>
+
+                    <div class="product-carousel" data-carousel>
+                        <!-- Decorative nav artwork from Figma (kept for fidelity) -->
+                        <img
+                            class="product-carousel__nav-art"
+                            src="./assets/nav-buttons.svg"
+                            alt=""
+                            aria-hidden="true"
+                            loading="lazy"
+                        />
+
+                        <!-- Functional, accessible controls (work at all breakpoints) -->
+                        <div
+                            class="product-carousel__controls"
+                            aria-label="Carousel controls"
+                        >
+                            <button
+                                class="icon-button"
+                                type="button"
+                                data-carousel-prev
+                                aria-label="Previous products"
+                            >
+                                <span aria-hidden="true">‹</span>
+                            </button>
+
+                            <button
+                                class="icon-button"
+                                type="button"
+                                data-carousel-next
+                                aria-label="Next products"
+                            >
+                                <span aria-hidden="true">›</span>
+                            </button>
+                        </div>
+
+                        <div
+                            class="product-carousel__viewport"
+                            data-carousel-viewport
+                            tabindex="0"
+                            aria-label="Product list"
+                        >
+                            <div
+                                class="product-carousel__track"
+                                data-carousel-track
+                            >
+                                <article class="product-card" data-product-card>
+                                    <div class="product-card__image-wrap">
+                                        <img
+                                            class="product-card__image"
+                                            src="./assets/product-1.png"
+                                            alt="Pre Bottled cosmetic Products"
+                                            loading="lazy"
+                                            draggable="false"
+                                        />
+                                    </div>
+
+                                    <div class="product-card__info">
+                                        <p class="product-card__name">
+                                            Pre Bottled cosmetic Products
+                                        </p>
+                                        <p class="product-card__price">
+                                            $32.00
+                                        </p>
+
+                                        <button
+                                            class="product-card__cta"
+                                            type="button"
+                                            data-quick-add
+                                            data-product-name="Pre Bottled cosmetic Products"
+                                            data-product-price="$32.00"
+                                        >
+                                            Quick add
+                                        </button>
+                                    </div>
+                                </article>
+
+                                <article class="product-card" data-product-card>
+                                    <div class="product-card__image-wrap">
+                                        <img
+                                            class="product-card__image"
+                                            src="./assets/product-2.png"
+                                            alt="custom Candle"
+                                            loading="lazy"
+                                            draggable="false"
+                                        />
+                                    </div>
+
+                                    <div class="product-card__info">
+                                        <p class="product-card__name">
+                                            custom Candle
+                                        </p>
+                                        <p class="product-card__price">
+                                            $22.00
+                                        </p>
+
+                                        <button
+                                            class="product-card__cta"
+                                            type="button"
+                                            data-quick-add
+                                            data-product-name="custom Candle"
+                                            data-product-price="$22.00"
+                                        >
+                                            Quick add
+                                        </button>
+                                    </div>
+                                </article>
+
+                                <article class="product-card" data-product-card>
+                                    <div class="product-card__image-wrap">
+                                        <img
+                                            class="product-card__image"
+                                            src="./assets/product-3.png"
+                                            alt="Ceramic Mug"
+                                            loading="lazy"
+                                            draggable="false"
+                                        />
+                                    </div>
+
+                                    <div class="product-card__info">
+                                        <p class="product-card__name">
+                                            Ceramic Mug
+                                        </p>
+                                        <p class="product-card__price">
+                                            $45.00
+                                        </p>
+
+                                        <button
+                                            class="product-card__cta"
+                                            type="button"
+                                            data-quick-add
+                                            data-product-name="Ceramic Mug"
+                                            data-product-price="$45.00"
+                                        >
+                                            Quick add
+                                        </button>
+                                    </div>
+                                </article>
+
+                                <article class="product-card" data-product-card>
+                                    <div class="product-card__image-wrap">
+                                        <img
+                                            class="product-card__image"
+                                            src="./assets/product-4.png"
+                                            alt="Bathroom Soap Dispenser"
+                                            loading="lazy"
+                                            draggable="false"
+                                        />
+                                    </div>
+
+                                    <div class="product-card__info">
+                                        <p class="product-card__name">
+                                            Bathroom Soap Dispenser
+                                        </p>
+                                        <p class="product-card__price">
+                                            From $65.00
+                                        </p>
+
+                                        <button
+                                            class="product-card__cta"
+                                            type="button"
+                                            data-quick-add
+                                            data-product-name="Bathroom Soap Dispenser"
+                                            data-product-price="From $65.00"
+                                        >
+                                            Quick add
+                                        </button>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- Live region for "Quick add" feedback -->
+                        <div
+                            class="toast"
+                            role="status"
+                            aria-live="polite"
+                            aria-atomic="true"
+                            hidden
+                            data-toast
+                        >
+                            <span class="toast__text" data-toast-text></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
