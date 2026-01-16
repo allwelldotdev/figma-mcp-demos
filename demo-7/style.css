@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.background-wrapper {
+    flex: 0 0 55%; /* Approximating the ratio from Figma 952px / 1728px */
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.login-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+}
+
+/* Header Section */
+.header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.icon-wrapper {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.face-icon {
+    width: 167px;
+    height: 167px;
+    object-fit: contain;
+}
+
+.app-title {
+    font-weight: 700;
+    font-size: 32px;
+    color: #1B4F13;
+    letter-spacing: 0px;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+}
+
+/* Login Form */
+.login-form {
+    width: 100%;
+    max-width: 547px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+    color: #238421;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    height: 77px;
+    background-color: #FFFFFF;
+    border: 1px solid #53AB34;
+    border-radius: 6px;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    padding: 0 20px;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+
+.form-input:focus {
+    border-width: 2px;
+}
+
+.forgot-password-wrapper {
+    margin-bottom: 2rem;
+    align-self: flex-start;
+}
+
+.forgot-password {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.73);
+    text-decoration: none;
+}
+
+.submit-btn {
+    width: 290px;
+    height: 56px;
+    background-color: #238421;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    align-self: center;
+    margin-bottom: 2rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background-color: #1a6319;
+}
+
+.submit-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Footer Section */
+.service-title {
+    font-weight: 400;
+    font-size: 18px;
+    color: #53AB34;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+}
+
+.nis-logo {
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .background-wrapper {
+        flex: 0 0 40%;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .background-wrapper {
+        flex: 0 0 300px;
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .login-content {
+        padding: 2rem 1rem;
+        width: 100%;
+    }
+
+    body {
+        overflow: auto;
+    }
+}

@@ -1,0 +1,23 @@
+https://www.figma.com/design/mzQKF1KgCwxorbHNknvlnE/LSS-web-UI-design?node-id=16-110&t=HvNcJyhOBuNF5Spu-4
+
+I want you to implement the Figma design in the link above in the [@index.html](file:///home/allwell/Code/mcp/demos/figma-mcp-demo-1/index.html) file. Create a separate `style.css` file in the same directory for styling.
+
+Use the "Framelink MCP for Figma" MCP server for this operation.
+
+If you have any questions, feel free to ask.
+
+-------
+
+PROMPT
+
+[placeholder for Figma section link]
+
+I want you to implement the Figma design in the link above in the project directory: [placeholder project-directory]. Use `index.html` for markup, `style.css` for styling, and `script.js` for javascript interactivity. Ensure to separete concerns by creating separate files in the project directory.
+
+Insert all other work folders in the project directory.
+
+Ensure to use the right HTML tags for the right design elements; such as `svg` tag for SVG elements, and so on.
+
+[space for specific instructions]
+
+Don't respond verbose, as long as the file is edited to completion. Only output important information regarding tool calling or other similar actions to the user.

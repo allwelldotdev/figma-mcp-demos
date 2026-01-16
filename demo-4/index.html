@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LSS Web UI Design</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- Importing fonts usually found in designs, e.g., Inter or Roboto -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- Header / Navigation -->
+        <header class="header container">
+            <div class="logo">
+                <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect width="40" height="40" rx="8" fill="#4F46E5" />
+                    <path
+                        d="M12 20L18 26L28 14"
+                        stroke="white"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+                <span class="logo-text">LSS UI</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">Home</a>
+                <a href="#" class="nav-item">Features</a>
+                <a href="#" class="nav-item">Pricing</a>
+                <a href="#" class="nav-item">About</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-secondary">Log in</button>
+                <button class="btn btn-primary">Sign up</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero container">
+                <div class="hero-content">
+                    <h1>Build better interfaces with LSS Web UI</h1>
+                    <p>
+                        A comprehensive design system for building modern web
+                        applications with speed and consistency.
+                    </p>
+                    <div class="hero-btns">
+                        <button class="btn btn-primary btn-lg">
+                            Get Started
+                        </button>
+                        <button class="btn btn-outline btn-lg">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Carousel Section (Full Width Background) -->
+            <section class="features-carousel">
+                <div class="carousel-header">
+                    <h2>Our Key Features</h2>
+                    <div class="carousel-controls">
+                        <button
+                            class="carousel-btn prev-btn"
+                            id="prevBtn"
+                            aria-label="Previous slide"
+                        >
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M15 18L9 12L15 6"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            class="carousel-btn next-btn"
+                            id="nextBtn"
+                            aria-label="Next slide"
+                        >
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M9 18L15 12L9 6"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="track">
+                        <!-- Slide 1 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 48 48"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        width="48"
+                                        height="48"
+                                        rx="12"
+                                        fill="#E0E7FF"
+                                    />
+                                    <path
+                                        d="M24 16V32M16 24H32"
+                                        stroke="#4F46E5"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <h3>Modular Components</h3>
+                            <p>
+                                Easily compose complex interfaces using our
+                                pre-built, flexible components designed for
+                                reuse.
+                            </p>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 48 48"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        width="48"
+                                        height="48"
+                                        rx="12"
+                                        fill="#DCFCE7"
+                                    />
+                                    <path
+                                        d="M24 16C19.5817 16 16 19.5817 16 24C16 28.4183 19.5817 32 24 32C28.4183 32 32 28.4183 32 24C32 19.5817 28.4183 16 24 16Z"
+                                        stroke="#16A34A"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <h3>Responsive Design</h3>
+                            <p>
+                                Interfaces that adapt seamlessly to any screen
+                                size, from mobile phones to large desktop
+                                displays.
+                            </p>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 48 48"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        width="48"
+                                        height="48"
+                                        rx="12"
+                                        fill="#FEF3C7"
+                                    />
+                                    <path
+                                        d="M24 14L27.09 20.26L34 21.27L29 26.14L30.18 33.02L24 29.77L17.82 33.02L19 26.14L14 21.27L20.91 20.26L24 14Z"
+                                        stroke="#D97706"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <h3>Accessibility First</h3>
+                            <p>
+                                Built with WCAG standards in mind to ensure your
+                                application is usable by everyone.
+                            </p>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 48 48"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        width="48"
+                                        height="48"
+                                        rx="12"
+                                        fill="#FCE7F3"
+                                    />
+                                    <path
+                                        d="M16 24H32M24 16L24 32"
+                                        stroke="#DB2777"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <h3>Easy Customization</h3>
+                            <p>
+                                Customize themes, colors, and typography to
+                                match your brand identity with minimal effort.
+                            </p>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="carousel-card">
+                            <div class="card-icon">
+                                <svg
+                                    width="48"
+                                    height="48"
+                                    viewBox="0 0 48 48"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        width="48"
+                                        height="48"
+                                        rx="12"
+                                        fill="#E0F2FE"
+                                    />
+                                    <path
+                                        d="M24 16V32M16 20L24 16L32 20M16 28L24 32L32 28"
+                                        stroke="#0284C7"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <h3>Performance Optimized</h3>
+                            <p>
+                                Lightweight and optimized for speed, ensuring
+                                your application loads fast and runs smoothly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators" id="indicators">
+                    <!-- Indicators will be generated by JS -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content container">
+                <p>&copy; 2024 LSS Web UI. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

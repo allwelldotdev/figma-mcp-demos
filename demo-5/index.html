@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>LSS Web UI</title>
+        <meta name="description" content="LSS web UI design implementation" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- You can replace fonts to match Figma exactly if needed -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <!-- Top App Header -->
+        <header class="site-header" role="banner">
+            <div class="container header__inner">
+                <a class="brand" href="#" aria-label="LSS home">
+                    <!-- Replace with Figma logo SVG when available -->
+                    <span class="brand__mark" aria-hidden="true">
+                        <svg
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            aria-label="Brand mark"
+                        >
+                            <rect
+                                x="3"
+                                y="3"
+                                width="26"
+                                height="26"
+                                rx="8"
+                                fill="currentColor"
+                                opacity="0.12"
+                            />
+                            <path
+                                d="M10 20V12.2C10 11.537 10.537 11 11.2 11H14.4C15.063 11 15.6 11.537 15.6 12.2V20H10Z"
+                                fill="currentColor"
+                            />
+                            <path
+                                d="M16.8 20V14.6C16.8 13.937 17.337 13.4 18 13.4H20.8C21.463 13.4 22 13.937 22 14.6V20H16.8Z"
+                                fill="currentColor"
+                                opacity="0.72"
+                            />
+                        </svg>
+                    </span>
+                    <span class="brand__text">LSS</span>
+                </a>
+
+                <nav class="nav" aria-label="Primary">
+                    <button
+                        class="nav__toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="nav-menu"
+                    >
+                        <span
+                            class="nav__toggle-icon"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="sr-only">Menu</span>
+                    </button>
+
+                    <div class="nav__menu" id="nav-menu">
+                        <a class="nav__link is-active" href="#">Home</a>
+                        <a class="nav__link" href="#services">Services</a>
+                        <a class="nav__link" href="#features">Features</a>
+                        <a class="nav__link" href="#testimonials"
+                            >Testimonials</a
+                        >
+                        <a class="nav__link" href="#contact">Contact</a>
+                    </div>
+                </nav>
+
+                <div class="header__actions">
+                    <button class="btn btn--ghost" type="button">
+                        Sign in
+                    </button>
+                    <button class="btn btn--primary" type="button">
+                        Get started
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main id="main">
+            <!-- Hero / Carousel -->
+            <section class="hero" aria-label="Hero">
+                <div class="container hero__grid">
+                    <div class="hero__content">
+                        <p class="hero__eyebrow">LSS platform</p>
+                        <h1 class="hero__title">
+                            Build faster with a clean, modern UI system
+                        </h1>
+                        <p class="hero__subtitle">
+                            A responsive layout with a sliding carousel, feature
+                            highlights, and structured sections — ready for your
+                            real content.
+                        </p>
+
+                        <div class="hero__cta">
+                            <button class="btn btn--primary" type="button">
+                                Explore
+                            </button>
+                            <button class="btn btn--secondary" type="button">
+                                <span class="btn__icon" aria-hidden="true">
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 20 20"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M10 18.333C5.398 18.333 1.667 14.602 1.667 10C1.667 5.398 5.398 1.667 10 1.667C14.602 1.667 18.333 5.398 18.333 10C18.333 14.602 14.602 18.333 10 18.333Z"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                        />
+                                        <path
+                                            d="M8.75 7.5L12.5 10L8.75 12.5V7.5Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </span>
+                                Watch demo
+                            </button>
+                        </div>
+
+                        <div class="hero__stats" aria-label="Quick stats">
+                            <div class="stat">
+                                <div class="stat__value">99.9%</div>
+                                <div class="stat__label">Uptime</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__value">24/7</div>
+                                <div class="stat__label">Support</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__value">1k+</div>
+                                <div class="stat__label">Teams</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero__media">
+                        <div class="carousel" data-carousel>
+                            <div
+                                class="carousel__viewport"
+                                data-carousel-viewport
+                            >
+                                <div
+                                    class="carousel__track"
+                                    data-carousel-track
+                                >
+                                    <!-- Add more slides so it can slide -->
+                                    <article
+                                        class="slide"
+                                        data-slide
+                                        aria-label="Slide 1 of 5"
+                                    >
+                                        <div class="slide__card">
+                                            <div class="slide__badge">New</div>
+                                            <h2 class="slide__title">
+                                                Dashboard overview
+                                            </h2>
+                                            <p class="slide__text">
+                                                High-level metrics, activity,
+                                                and system status in one place.
+                                            </p>
+                                            <div
+                                                class="slide__mock"
+                                                aria-hidden="true"
+                                            >
+                                                <svg
+                                                    width="520"
+                                                    height="300"
+                                                    viewBox="0 0 520 300"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <rect
+                                                        x="0"
+                                                        y="0"
+                                                        width="520"
+                                                        height="300"
+                                                        rx="18"
+                                                        fill="currentColor"
+                                                        opacity="0.06"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="28"
+                                                        width="200"
+                                                        height="18"
+                                                        rx="9"
+                                                        fill="currentColor"
+                                                        opacity="0.18"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="62"
+                                                        width="310"
+                                                        height="10"
+                                                        rx="5"
+                                                        fill="currentColor"
+                                                        opacity="0.12"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="102"
+                                                        width="220"
+                                                        height="150"
+                                                        rx="14"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <rect
+                                                        x="268"
+                                                        y="102"
+                                                        width="224"
+                                                        height="68"
+                                                        rx="14"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <rect
+                                                        x="268"
+                                                        y="184"
+                                                        width="224"
+                                                        height="68"
+                                                        rx="14"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <path
+                                                        d="M58 220C84 200 92 190 120 202C150 216 160 150 190 158C214 164 218 186 238 174"
+                                                        stroke="currentColor"
+                                                        stroke-width="3"
+                                                        stroke-linecap="round"
+                                                        opacity="0.35"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                    <article
+                                        class="slide"
+                                        data-slide
+                                        aria-label="Slide 2 of 5"
+                                    >
+                                        <div class="slide__card">
+                                            <div
+                                                class="slide__badge slide__badge--info"
+                                            >
+                                                Tip
+                                            </div>
+                                            <h2 class="slide__title">
+                                                Task management
+                                            </h2>
+                                            <p class="slide__text">
+                                                Organize work, assign owners,
+                                                and track progress at a glance.
+                                            </p>
+                                            <div
+                                                class="slide__mock"
+                                                aria-hidden="true"
+                                            >
+                                                <svg
+                                                    width="520"
+                                                    height="300"
+                                                    viewBox="0 0 520 300"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <rect
+                                                        width="520"
+                                                        height="300"
+                                                        rx="18"
+                                                        fill="currentColor"
+                                                        opacity="0.06"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="28"
+                                                        width="180"
+                                                        height="18"
+                                                        rx="9"
+                                                        fill="currentColor"
+                                                        opacity="0.18"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="66"
+                                                        width="464"
+                                                        height="54"
+                                                        rx="14"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="136"
+                                                        width="464"
+                                                        height="54"
+                                                        rx="14"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="206"
+                                                        width="464"
+                                                        height="54"
+                                                        rx="14"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <circle
+                                                        cx="54"
+                                                        cy="93"
+                                                        r="10"
+                                                        fill="currentColor"
+                                                        opacity="0.25"
+                                                    />
+                                                    <circle
+                                                        cx="54"
+                                                        cy="163"
+                                                        r="10"
+                                                        fill="currentColor"
+                                                        opacity="0.25"
+                                                    />
+                                                    <circle
+                                                        cx="54"
+                                                        cy="233"
+                                                        r="10"
+                                                        fill="currentColor"
+                                                        opacity="0.25"
+                                                    />
+                                                    <rect
+                                                        x="78"
+                                                        y="86"
+                                                        width="220"
+                                                        height="12"
+                                                        rx="6"
+                                                        fill="currentColor"
+                                                        opacity="0.16"
+                                                    />
+                                                    <rect
+                                                        x="78"
+                                                        y="156"
+                                                        width="250"
+                                                        height="12"
+                                                        rx="6"
+                                                        fill="currentColor"
+                                                        opacity="0.16"
+                                                    />
+                                                    <rect
+                                                        x="78"
+                                                        y="226"
+                                                        width="200"
+                                                        height="12"
+                                                        rx="6"
+                                                        fill="currentColor"
+                                                        opacity="0.16"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                    <article
+                                        class="slide"
+                                        data-slide
+                                        aria-label="Slide 3 of 5"
+                                    >
+                                        <div class="slide__card">
+                                            <div
+                                                class="slide__badge slide__badge--success"
+                                            >
+                                                Update
+                                            </div>
+                                            <h2 class="slide__title">
+                                                Analytics & insights
+                                            </h2>
+                                            <p class="slide__text">
+                                                Make decisions using clear
+                                                charts and actionable trends.
+                                            </p>
+                                            <div
+                                                class="slide__mock"
+                                                aria-hidden="true"
+                                            >
+                                                <svg
+                                                    width="520"
+                                                    height="300"
+                                                    viewBox="0 0 520 300"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <rect
+                                                        width="520"
+                                                        height="300"
+                                                        rx="18"
+                                                        fill="currentColor"
+                                                        opacity="0.06"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="28"
+                                                        width="220"
+                                                        height="18"
+                                                        rx="9"
+                                                        fill="currentColor"
+                                                        opacity="0.18"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="70"
+                                                        width="464"
+                                                        height="204"
+                                                        rx="16"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <path
+                                                        d="M66 232L130 192L184 206L240 156L302 172L352 132L410 154L454 122"
+                                                        stroke="currentColor"
+                                                        stroke-width="3"
+                                                        stroke-linecap="round"
+                                                        opacity="0.35"
+                                                    />
+                                                    <path
+                                                        d="M66 232V110"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        opacity="0.12"
+                                                    />
+                                                    <path
+                                                        d="M66 232H468"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        opacity="0.12"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                    <article
+                                        class="slide"
+                                        data-slide
+                                        aria-label="Slide 4 of 5"
+                                    >
+                                        <div class="slide__card">
+                                            <div
+                                                class="slide__badge slide__badge--warning"
+                                            >
+                                                Beta
+                                            </div>
+                                            <h2 class="slide__title">
+                                                Integrations
+                                            </h2>
+                                            <p class="slide__text">
+                                                Connect your existing tools and
+                                                automate routine workflows.
+                                            </p>
+                                            <div
+                                                class="slide__mock"
+                                                aria-hidden="true"
+                                            >
+                                                <svg
+                                                    width="520"
+                                                    height="300"
+                                                    viewBox="0 0 520 300"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <rect
+                                                        width="520"
+                                                        height="300"
+                                                        rx="18"
+                                                        fill="currentColor"
+                                                        opacity="0.06"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="28"
+                                                        width="160"
+                                                        height="18"
+                                                        rx="9"
+                                                        fill="currentColor"
+                                                        opacity="0.18"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="76"
+                                                        width="220"
+                                                        height="198"
+                                                        rx="16"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <rect
+                                                        x="272"
+                                                        y="76"
+                                                        width="220"
+                                                        height="198"
+                                                        rx="16"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <circle
+                                                        cx="138"
+                                                        cy="160"
+                                                        r="38"
+                                                        fill="currentColor"
+                                                        opacity="0.12"
+                                                    />
+                                                    <circle
+                                                        cx="382"
+                                                        cy="200"
+                                                        r="38"
+                                                        fill="currentColor"
+                                                        opacity="0.12"
+                                                    />
+                                                    <path
+                                                        d="M176 160H272"
+                                                        stroke="currentColor"
+                                                        stroke-width="3"
+                                                        stroke-linecap="round"
+                                                        opacity="0.30"
+                                                    />
+                                                    <path
+                                                        d="M242 146L272 160L242 174"
+                                                        stroke="currentColor"
+                                                        stroke-width="3"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        opacity="0.30"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                    <article
+                                        class="slide"
+                                        data-slide
+                                        aria-label="Slide 5 of 5"
+                                    >
+                                        <div class="slide__card">
+                                            <div class="slide__badge">New</div>
+                                            <h2 class="slide__title">
+                                                Team collaboration
+                                            </h2>
+                                            <p class="slide__text">
+                                                Comment, review, and ship
+                                                changes together with
+                                                confidence.
+                                            </p>
+                                            <div
+                                                class="slide__mock"
+                                                aria-hidden="true"
+                                            >
+                                                <svg
+                                                    width="520"
+                                                    height="300"
+                                                    viewBox="0 0 520 300"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <rect
+                                                        width="520"
+                                                        height="300"
+                                                        rx="18"
+                                                        fill="currentColor"
+                                                        opacity="0.06"
+                                                    />
+                                                    <rect
+                                                        x="28"
+                                                        y="28"
+                                                        width="200"
+                                                        height="18"
+                                                        rx="9"
+                                                        fill="currentColor"
+                                                        opacity="0.18"
+                                                    />
+                                                    <circle
+                                                        cx="140"
+                                                        cy="170"
+                                                        r="62"
+                                                        fill="currentColor"
+                                                        opacity="0.08"
+                                                    />
+                                                    <circle
+                                                        cx="270"
+                                                        cy="170"
+                                                        r="62"
+                                                        fill="currentColor"
+                                                        opacity="0.08"
+                                                    />
+                                                    <circle
+                                                        cx="400"
+                                                        cy="170"
+                                                        r="62"
+                                                        fill="currentColor"
+                                                        opacity="0.08"
+                                                    />
+                                                    <rect
+                                                        x="90"
+                                                        y="236"
+                                                        width="340"
+                                                        height="12"
+                                                        rx="6"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                    <rect
+                                                        x="150"
+                                                        y="84"
+                                                        width="220"
+                                                        height="12"
+                                                        rx="6"
+                                                        fill="currentColor"
+                                                        opacity="0.10"
+                                                    />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <div
+                                class="carousel__controls"
+                                aria-label="Carousel controls"
+                            >
+                                <button
+                                    class="icon-btn"
+                                    type="button"
+                                    data-carousel-prev
+                                    aria-label="Previous slide"
+                                >
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 20 20"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M12.5 15L7.5 10L12.5 5"
+                                            stroke="currentColor"
+                                            stroke-width="1.8"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+
+                                <div
+                                    class="carousel__dots"
+                                    role="tablist"
+                                    aria-label="Choose slide"
+                                >
+                                    <button
+                                        class="dot is-active"
+                                        type="button"
+                                        data-carousel-dot
+                                        aria-label="Go to slide 1"
+                                    ></button>
+                                    <button
+                                        class="dot"
+                                        type="button"
+                                        data-carousel-dot
+                                        aria-label="Go to slide 2"
+                                    ></button>
+                                    <button
+                                        class="dot"
+                                        type="button"
+                                        data-carousel-dot
+                                        aria-label="Go to slide 3"
+                                    ></button>
+                                    <button
+                                        class="dot"
+                                        type="button"
+                                        data-carousel-dot
+                                        aria-label="Go to slide 4"
+                                    ></button>
+                                    <button
+                                        class="dot"
+                                        type="button"
+                                        data-carousel-dot
+                                        aria-label="Go to slide 5"
+                                    ></button>
+                                </div>
+
+                                <button
+                                    class="icon-btn"
+                                    type="button"
+                                    data-carousel-next
+                                    aria-label="Next slide"
+                                >
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 20 20"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M7.5 15L12.5 10L7.5 5"
+                                            stroke="currentColor"
+                                            stroke-width="1.8"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services / Highlights -->
+            <section class="section" id="services" aria-label="Services">
+                <div class="container">
+                    <header class="section__header">
+                        <h2 class="section__title">Services</h2>
+                        <p class="section__subtitle">
+                            Everything you need to launch and scale.
+                        </p>
+                    </header>
+
+                    <div class="cards cards--3">
+                        <article class="card">
+                            <div class="card__icon" aria-hidden="true">
+                                <svg
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 28 28"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M7.5 12.833L14 6.333L20.5 12.833V21.667H7.5V12.833Z"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M12 21.667V15.667H16V21.667"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="card__title">Modern UI</h3>
+                            <p class="card__text">
+                                Accessible layouts with responsive structure and
+                                clean spacing.
+                            </p>
+                        </article>
+
+                        <article class="card">
+                            <div class="card__icon" aria-hidden="true">
+                                <svg
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 28 28"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <rect
+                                        x="6.5"
+                                        y="7"
+                                        width="15"
+                                        height="14"
+                                        rx="3"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                    />
+                                    <path
+                                        d="M9 11H19"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                    />
+                                    <path
+                                        d="M9 15H16"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="card__title">Structured content</h3>
+                            <p class="card__text">
+                                Sections, grids, and cards mapped to semantic
+                                HTML elements.
+                            </p>
+                        </article>
+
+                        <article class="card">
+                            <div class="card__icon" aria-hidden="true">
+                                <svg
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 28 28"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M14 5.833C10.134 5.833 7 8.967 7 12.833C7 18.667 14 22.167 14 22.167C14 22.167 21 18.667 21 12.833C21 8.967 17.866 5.833 14 5.833Z"
+                                        stroke="currentColor"
+                                        stroke-width="1.7"
+                                    />
+                                    <circle
+                                        cx="14"
+                                        cy="12.833"
+                                        r="2.333"
+                                        fill="currentColor"
+                                        opacity="0.25"
+                                    />
+                                </svg>
+                            </div>
+                            <h3 class="card__title">Fast navigation</h3>
+                            <p class="card__text">
+                                Header menu, actions, and smooth scrolling
+                                anchors.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section
+                class="section section--alt"
+                id="features"
+                aria-label="Features"
+            >
+                <div class="container">
+                    <header class="section__header">
+                        <h2 class="section__title">Features</h2>
+                        <p class="section__subtitle">
+                            Built-in patterns that match your product needs.
+                        </p>
+                    </header>
+
+                    <div class="feature-grid">
+                        <article class="feature">
+                            <h3 class="feature__title">Responsive layout</h3>
+                            <p class="feature__text">
+                                Grid-based layout that adapts down to mobile
+                                while keeping typography readable.
+                            </p>
+                        </article>
+
+                        <article class="feature">
+                            <h3 class="feature__title">Carousel interaction</h3>
+                            <p class="feature__text">
+                                Touch/drag support, buttons, dots, keyboard
+                                controls, and autoplay-ready structure.
+                            </p>
+                        </article>
+
+                        <article class="feature">
+                            <h3 class="feature__title">
+                                Accessible components
+                            </h3>
+                            <p class="feature__text">
+                                Semantic tags and ARIA labels where appropriate
+                                to preserve meaning.
+                            </p>
+                        </article>
+
+                        <article class="feature">
+                            <h3 class="feature__title">Design tokens</h3>
+                            <p class="feature__text">
+                                Centralized spacing, radii, colors, and
+                                typography for consistent styling.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section
+                class="section"
+                id="testimonials"
+                aria-label="Testimonials"
+            >
+                <div class="container">
+                    <header class="section__header">
+                        <h2 class="section__title">What teams say</h2>
+                        <p class="section__subtitle">
+                            A simple testimonial layout to match the design
+                            system.
+                        </p>
+                    </header>
+
+                    <div class="cards cards--2">
+                        <figure class="quote">
+                            <blockquote class="quote__text">
+                                “The layout is crisp, the components are
+                                reusable, and the carousel feels great on
+                                mobile.”
+                            </blockquote>
+                            <figcaption class="quote__meta">
+                                <span
+                                    class="quote__avatar"
+                                    aria-hidden="true"
+                                ></span>
+                                <span class="quote__author">Product Lead</span>
+                                <span class="quote__role">— Growth Team</span>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="quote">
+                            <blockquote class="quote__text">
+                                “Semantic HTML and clean CSS made integration
+                                into our app straightforward.”
+                            </blockquote>
+                            <figcaption class="quote__meta">
+                                <span
+                                    class="quote__avatar"
+                                    aria-hidden="true"
+                                ></span>
+                                <span class="quote__author"
+                                    >Frontend Engineer</span
+                                >
+                                <span class="quote__role">— Platform</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section
+                class="section section--alt"
+                id="contact"
+                aria-label="Contact"
+            >
+                <div class="container contact">
+                    <div class="contact__copy">
+                        <h2 class="section__title">Contact</h2>
+                        <p class="section__subtitle">
+                            Send a message or subscribe for updates. Replace
+                            this copy to match Figma content.
+                        </p>
+                    </div>
+
+                    <form class="form" action="#" method="post">
+                        <label class="field">
+                            <span class="field__label">Email</span>
+                            <input
+                                class="field__input"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                placeholder="you@company.com"
+                                required
+                            />
+                        </label>
+
+                        <label class="field">
+                            <span class="field__label">Message</span>
+                            <textarea
+                                class="field__input field__input--textarea"
+                                name="message"
+                                rows="4"
+                                placeholder="How can we help?"
+                                required
+                            ></textarea>
+                        </label>
+
+                        <button class="btn btn--primary" type="submit">
+                            Send
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="container footer__inner">
+                <div class="footer__brand">
+                    <span class="brand__text">LSS</span>
+                    <p class="footer__note">
+                        © <span data-year></span> LSS. All rights reserved.
+                    </p>
+                </div>
+
+                <div class="footer__links" aria-label="Footer links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./script.js" defer></script>
+    </body>
+</html>

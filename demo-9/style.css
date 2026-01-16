@@ -1,0 +1,882 @@
+:root {
+    --primary-text: #000000;
+    --secondary-text: #545454;
+    --bg-white: #ffffff;
+    --bg-product: #f9f6ef;
+    --bg-reviews: #f6f6f6;
+    --accent-green: #024d46;
+    --btn-bg: #d9d9d9;
+    --border-color: #ececec;
+
+    --font-family: "DM Sans", sans-serif;
+
+    --container-padding: 0 100px;
+    --max-width: 1920px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--primary-text);
+    background-color: var(--bg-white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Layout --- */
+.landing-page {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 900px;
+    background-image: url("images/hero-bg.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-menu {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background-color: rgba(217, 217, 217, 0.2);
+    backdrop-filter: blur(30px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.menu-items {
+    display: flex;
+    gap: 30px;
+}
+
+.menu-items a {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--primary-text);
+}
+
+.top-right-icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icon-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 9px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.hero-cta {
+    margin-top: 250px; /* Adjust based on design spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-cta h1 {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+}
+
+.hero-cta p {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.btn-shop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--btn-bg);
+    border: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1e1e1e;
+    transition: opacity 0.3s;
+}
+
+.btn-shop:hover {
+    opacity: 0.9;
+}
+
+/* --- Tag Section --- */
+.tag-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 60px 50px;
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+.tag-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.tag-icon {
+    width: 74px;
+    height: 74px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tag-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-text h3 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.tag-text p {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+/* --- Product Section --- */
+.product-section {
+    background-color: var(--bg-product);
+    padding: 80px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-section h2 {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.product-gallery {
+    width: 100%;
+    position: relative;
+}
+
+.nav-buttons-prev {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.nav-buttons-prev img {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.product-image {
+    width: 100%;
+    height: 338px;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.product-details {
+    text-align: center;
+}
+
+.product-details h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.product-details .price {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btn-quick-add {
+    background-color: var(--primary-text);
+    color: white;
+    border: 1px solid white;
+    padding: 10px 24px;
+    border-radius: 3px;
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    max-width: 150px;
+}
+
+/* Doodles positioning - simplified */
+.doodles img {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+.doodle-flower {
+    top: 50px;
+    left: 50px;
+}
+.doodle-1 {
+    bottom: 50px;
+    left: 50px;
+}
+.doodle-2 {
+    bottom: 50px;
+    right: 50px;
+}
+
+/* --- Service Section --- */
+.service-section {
+    padding: 100px 140px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    position: relative;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.service-item {
+    font-size: 28px;
+    color: #000;
+    cursor: pointer;
+    padding-bottom: 5px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.service-item.active {
+    font-weight: 500;
+    opacity: 1;
+    border-bottom: 3px solid #000;
+    width: fit-content;
+}
+
+.service-icon-group {
+    margin-top: 40px;
+}
+
+.service-details {
+    display: flex;
+    gap: 40px;
+    background-color: #f7faeb; /* Fallback/Similar to design */
+    border-radius: 32px 0 0 32px;
+    overflow: hidden;
+    padding-right: 40px;
+}
+
+/* Complex shape realization via CSS might be tricky, using simple flex row for content */
+.service-details {
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+/* Re-implementing Service Section Layout based on Group Structure */
+.service-section {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 240px;
+}
+
+.service-list {
+    display: flex;
+    gap: 68px;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+}
+
+.service-item {
+    font-size: 28px;
+    opacity: 0.5;
+}
+.service-item.active {
+    opacity: 1;
+    font-weight: 500;
+    position: relative;
+}
+.service-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: black;
+}
+
+.service-details {
+    display: flex;
+    background-color: #ffffff;
+}
+
+.service-image {
+    flex: 1;
+    border-radius: 32px 0 0 32px;
+    overflow: hidden;
+}
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-content {
+    flex: 1;
+    background-color: white; /* Or transparent if bg is global */
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-tag {
+    display: inline-flex;
+    padding: 10px 24px;
+    background-color: var(
+        --primary-text
+    ); /* Black bg ? design shows orange text on white? No, fill_UO6G1R is white text on orange btn? */
+    /* Let's check design again: Frame 7 fills UO6G1R (White) text TNXID9 (Black)? No wait */
+    /* id 18:195 Frame 7 fills UO6G1R (White). Text 18:196 TNXID9 (Black). */
+    /* Actually looks like a pill badge */
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.service-content h2 {
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.service-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--primary-text);
+}
+
+.hand-pointer {
+    position: absolute;
+    bottom: 50px;
+    right: 15%;
+}
+
+/* --- Why Us Section --- */
+.why-us-section {
+    display: flex;
+    padding: 0 240px;
+    margin: 100px 0;
+    align-items: stretch;
+}
+
+.why-us-image {
+    flex: 1;
+    border-radius: 0 32px 32px 0;
+    overflow: hidden;
+    /* This assumes image is on the left based on some layouts or right? */
+    /* Design: Group 26. Rectangle 14 fills SBS8M9 (Image). Radius 0 32 32 0. Positioned right? */
+    /* Let's assume standard grid */
+    order: 2;
+}
+
+.why-us-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 60px;
+    gap: 30px;
+}
+
+.why-us-tag {
+    display: inline-flex;
+    padding: 10px 24px;
+    background-color: var(--primary-text);
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.why-us-content h2 {
+    font-size: 52px;
+    font-weight: 400;
+}
+
+.why-us-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* --- Team Section --- */
+.team-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 530px;
+}
+
+.team-images {
+    display: contents; /* Flattens children to grid */
+}
+
+.team-img-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 1 / 2;
+}
+
+.team-content {
+    background-color: #ffac92; /* fill_SZ5OV2 */
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    gap: 20px;
+    color: white; /* fill_UO6G1R text */
+}
+
+.team-tag {
+    background-color: black; /* fill_TNXID9 */
+    color: white;
+    padding: 10px 24px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.team-content h2 {
+    font-size: 52px;
+    font-weight: 400;
+}
+
+.team-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.team-img-2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 3 / 4;
+}
+
+.team-img-3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 4 / 5;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: #ffffff;
+    padding: 100px 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-text h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.contact-text h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.btn-contact {
+    align-self: flex-end;
+    background-color: black;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 3px;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* --- Reviews Section --- */
+.reviews-section {
+    background-color: var(--bg-reviews);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.reviews-section h2 {
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.reviews-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 0 50px 40px 50px;
+    justify-content: center;
+}
+
+.review-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    min-width: 400px;
+    max-width: 460px;
+    padding: 40px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-avatar img {
+    width: 127px;
+    height: 33px; /* Just logo? Figma image seems rectangular */
+    object-fit: contain;
+    object-position: left;
+}
+
+.review-content h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.review-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewer-info strong {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.reviewer-info span {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.reviews-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Scroll Section --- */
+.scroll-section {
+    background-color: white;
+    overflow: hidden;
+    padding: 40px 0;
+    white-space: nowrap;
+}
+
+.scrolling-text {
+    font-size: 52px;
+    font-weight: 400;
+    animation: scroll 20s linear infinite;
+    display: inline-block;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* --- Footer --- */
+footer {
+    padding: 80px 50px 20px 50px;
+    background-color: white;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.brand-info h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.contact-details p {
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-bottom: 8px;
+}
+
+.directions-link a {
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+.newsletter-image img {
+    height: 22px;
+    margin-bottom: 20px;
+}
+
+.newsletter p {
+    font-size: 14px;
+    color: var(--secondary-text);
+    margin-bottom: 20px;
+}
+
+.email-leads {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.email-leads input {
+    padding: 12px;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    background-color: #f6f6f6; /* fill_ZRE6HR is grey text, fill is white? */
+    /* Check design: Rectangle 26 stroke S019VA. Text fill ZRE6HR (#909090). Bg white. */
+    background: white;
+}
+
+.email-leads button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.copyright {
+    font-size: 14px;
+    color: var(--secondary-text);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .team-section {
+        grid-template-columns: repeat(2, 1fr);
+        height: auto;
+    }
+    .team-content {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .service-section,
+    .why-us-section {
+        flex-direction: column;
+        padding: 60px 40px;
+    }
+    .service-image,
+    .why-us-image {
+        width: 100%;
+        border-radius: 16px;
+    }
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-cta h1 {
+        font-size: 42px;
+    }
+    .top-menu {
+        padding: 0 20px;
+    }
+    .menu-items {
+        display: none; /* simple mobile hide for now */
+    }
+    .team-section {
+        grid-template-columns: 1fr;
+    }
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .review-card {
+        min-width: unset;
+        width: 100%;
+    }
+}

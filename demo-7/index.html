@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FacePass Login</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <!-- Background Image -->
+            <div class="background-wrapper">
+                <img
+                    src="images/bg-image.png"
+                    alt="Background"
+                    class="bg-image"
+                />
+            </div>
+
+            <!-- Main Content -->
+            <div class="login-content">
+                <!-- Header Section -->
+                <div class="header-section">
+                    <div class="icon-wrapper">
+                        <img
+                            src="images/mask-group.svg"
+                            alt="FacePass Icon"
+                            class="face-icon"
+                        />
+                    </div>
+                    <h1 class="app-title">FACEPASS</h1>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            class="form-input"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="form-input"
+                        />
+                    </div>
+
+                    <div class="forgot-password-wrapper">
+                        <a href="#" class="forgot-password">Forgot password</a>
+                    </div>
+
+                    <button type="submit" class="submit-btn">LOGIN</button>
+                </form>
+
+                <h2 class="service-title">Nigeria Immigration Service</h2>
+
+                <!-- NIS Logo -->
+                <div class="logo-section">
+                    <img
+                        src="images/nis-logo.png"
+                        alt="Nigeria Immigration Service Logo"
+                        class="nis-logo"
+                    />
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
